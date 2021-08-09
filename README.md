@@ -14,7 +14,7 @@ Augmented reality (AR) enables people to experience a 3D real-world environment 
 
  A Framework for Device–to–Device  Augmented Reality Social Networksummarize  
 
- The article defined two roles in an Augmented Reality Social Network (ARSN): promulgator and recipient.	It implemented the prototype on Android smartphones. To realize these functions, the most essential parts of the system are the Image Processing and the Dissemination Protocol.In this work, they designed and implemented Talk2Me, the first, to the best of our knowledge, distributed social network framework based on real–time augmented reality. Using Talk2Me, people can disseminate and receive information from people physically nearby in D2D fashion, and then view the information in an augmented reality way. Talk2Me provides a seamless information–sharing channel that we believe will encourage social interactions
+ They[2] defined two roles in an Augmented Reality Social Network (ARSN): promulgator and recipient.	It implemented the prototype on Android smartphones. To realize these functions, the most essential parts of the system are the Image Processing and the Dissemination Protocol.In this work, they designed and implemented Talk2Me, the first, to the best of our knowledge, distributed social network framework based on real–time augmented reality. Using Talk2Me, people can disseminate and receive information from people physically nearby in D2D fashion, and then view the information in an augmented reality way. 
 
 #### 3. Solution Design
 
@@ -48,11 +48,51 @@ We use unity as the main development software and vuforia as the SDK development
 
 We use alexnet in NVIDIA's digits for model training, and import the trained model into unity for use by the face recognition module. We haven't completed this part yet. 
 
+
+
+
+
+##### 4.3.1 use of mysql database to store social network
+
+MySQL Database Service is a fully managed database service to deploy cloud-native applications.**[3]**  We choose this databse because it has the advantages of small volume, high speed and low overall cost of ownership.Moreover, MySQL can run on multiple systems and supports multiple languages.
+
+* design of table
+
+![截屏2021-08-06 下午3.51.59](README.assets/截屏2021-08-06 下午3.51.59.png)There are mainly two tables in our MySQL database. One is called network, which stores the structure of social network in the form of adjacency matrix, and the other is userinfo, which stores some users' personal information. It is worth noting that we use blob instead of path to store users' personal photos, The reason is that once the physical way of storing pictures changes, it is troublesome to modify the face picture field in each piece of data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 4.3 Breadth-First Search used in finding the shortest path between two users
 
 #### 5. lessons learned and beyond   
 
  Although we claim that the internet is "separate" people, the rise of social applications which insisted by powerful network uplink we can create looks separate but more dynamic and strongly close network-based society for all our customers. Furthermore, we will more focus on providing more convenient services, more interesting techniques and functionalities combine with improving screens, more reliable and advanced processors.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### 6. conclusion
 
@@ -63,3 +103,5 @@ This proposal presents a photo-based augmented reality application that can matc
 [1] Talk2Me: A Framework for Device–to–Device  Augmented Reality Social Network
 
 [2] Face Recognition Based on Convolutional Neural Network
+
+[3] https://www.mysql.com/
